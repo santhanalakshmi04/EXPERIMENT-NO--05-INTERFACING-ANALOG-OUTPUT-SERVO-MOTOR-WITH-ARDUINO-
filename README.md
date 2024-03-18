@@ -58,6 +58,9 @@ CIRCUIT DIAGRAM
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
 
 ### FIGURE 04 CIRCUIT DIAGRAM
+![image](https://github.com/santhanalakshmi04/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/119475762/06c380a8-a2d3-495b-b926-ac20c74739b4)
+## SCHEMATIC REPRESENTATION:
+![image](https://github.com/santhanalakshmi04/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/119475762/301143f1-aa9f-4f34-9535-dd70e1bd02a0)
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -72,7 +75,37 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
+```
+#include <Servo.h>
+Servo s;
+int pos=0;
+void setup()
+{
+ s.attach(9);
+ Serial.begin(9600);
+}
+
+void loop()
+{
+ for(pos=0;pos<=180;pos+=1)
+ {
+   s.write(pos);
+   delay(20);
+   //Serial.print("Angle=");
+   Serial.println(pos);
+ }
+ for(pos=180;pos>=0;pos-=1)
+ {
+   s.write(pos);
+   delay(20);
+   //Serial.print("Angle=");
+   Serial.println(pos);
+ }
  
+}
+```
+## OUTPUT: 
+![image](https://github.com/santhanalakshmi04/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/119475762/522eae42-cecd-4015-8e54-4f618ba60903)
 
 
 
